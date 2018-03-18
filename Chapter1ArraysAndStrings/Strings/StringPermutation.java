@@ -1,4 +1,4 @@
-package Strings;
+package Chapter1ArraysAndStrings;
 
 import java.util.Arrays;
 
