@@ -6,11 +6,11 @@
 
 * https://github.com/kiranjagtap/Cracking-Coding-Interview/blob/master/src/Strings/IsUniqueChars.java[*Is Unique:*] Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?.
 
-* https://github.com/kiranjagtap/Cracking-Coding-Interview/blob/master/src/Strings/ch01/StringPermutation.java[*Check Permutation:*] Given two strings, write a method to decide if one is a permutation of the
+* https://github.com/kiranjagtap/Cracking-Coding-Interview/blob/master/src/Strings/StringPermutation.java[*Check Permutation:*] Given two strings, write a method to decide if one is a permutation of the
 other.
 
 
-* https://github.com/kiranjagtap/Cracking-Coding-Interview/blob/master/src/com/ctci6/ch01/URLify.java[*URLify:*] Write a method to replace all spaces in a string with '%2e: You may assume that the string has sufficient space at the end to hold the additional characters, and that you are given the "true" length of the string. 
+* https://github.com/kiranjagtap/Cracking-Coding-Interview/blob/master/src/Strings/URLify.java[*URLify:*] Write a method to replace all spaces in a string with '%2e: You may assume that the string has sufficient space at the end to hold the additional characters, and that you are given the "true" length of the string. 
 Note:: If implementing in Java, please use a character array so that you can perform this operation in place.
 
 [source,java]
@@ -42,7 +42,7 @@ pale, bae -> false
 -----------------
 
 
-* https://github.com/kiranjagtap/Cracking-Coding-Interview/blob/master/src/com/ctci6/ch01/StringCompression.java[*String Compression:*] Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the
+* https://github.com/kiranjagtap/Cracking-Coding-Interview/blob/master/src/Strings/StringCompression.java[*String Compression:*] Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the
 "compressed"string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters (a - z).
 
 * https://github.com/kiranjagtap/Cracking-Coding-Interview/blob/master/src/com/ctci6/ch01/RotateMatrix.java[*Rotate Matrix:*] Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place? 
