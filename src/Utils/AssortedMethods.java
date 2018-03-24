@@ -3,6 +3,8 @@ package Utils;
 import java.util.*;
 import java.awt.*;
 
+import datastructure.Node;
+
 public class AssortedMethods {
 	public static int randomInt(int n) {
 		return (int) (Math.random() * n);
@@ -19,7 +21,7 @@ public class AssortedMethods {
 	public static boolean randomBoolean(int percentTrue) {
 		return randomIntInRange(1, 100) <= percentTrue;
 	}
-	
+
 	public static boolean[][] randomBooleanMatrix(int M, int N, int percentTrue) {
 		boolean[][] matrix = new boolean[M][N];
 		for (int i = 0; i < M; i++) {
@@ -28,7 +30,7 @@ public class AssortedMethods {
 			}
 		}
 		return matrix;
-	}	
+	}
 
 	public static int[][] randomMatrix(int M, int N, int min, int max) {
 		int[][] matrix = new int[M][N];
@@ -40,7 +42,6 @@ public class AssortedMethods {
 		return matrix;
 	}
 
-
 	public static int[] randomArray(int N, int min, int max) {
 		int[] array = new int[N];
 		for (int j = 0; j < N; j++) {
@@ -48,44 +49,38 @@ public class AssortedMethods {
 		}
 		return array;
 	}
-/*
-	public static LinkedListNode randomLinkedList(int N, int min, int max) {
-		LinkedListNode root = new LinkedListNode(randomIntInRange(min, max),null, null);
-		LinkedListNode prev = root;
+
+	public static Node<Integer> randomLinkedList(int N, int min, int max) {
+		Node<Integer> root = new Node<Integer>(randomIntInRange(min, max),
+				null, null);
+		Node<Integer> prev = root;
 		for (int i = 1; i < N; i++) {
 			int data = randomIntInRange(min, max);
-			LinkedListNode next = new LinkedListNode(data, null, null);
+			Node<Integer> next = new Node<Integer>(data, null, null);
 			prev.setNext(next);
 			prev = next;
 		}
 		return root;
 	}
 
-	public static LinkedListNode linkedListWithValue(int N, int value) {
-		LinkedListNode root = new LinkedListNode(value, null, null);
-		LinkedListNode prev = root;
-		for (int i = 1; i < N; i++) {
-			LinkedListNode next = new LinkedListNode(value, null, null);
-			prev.setNext(next);
-			prev = next;
-		}
-		return root;
-	}
-
-	public static LinkedListNode createLinkedListFromArray(int[] vals) {
-		LinkedListNode head = new LinkedListNode(vals[0], null, null);
-		LinkedListNode current = head;
-		for (int i = 1; i < vals.length; i++) {
-			current = new LinkedListNode(vals[i], null, current);
-		}
-		return head;
-	}
-*/
+	/*
+	 * public static Node<Integer> linkedListWithValue(int N, int value) {
+	 * Node<Integer> root = new Node<Integer>(value, null, null); Node<Integer>
+	 * prev = root; for (int i = 1; i < N; i++) { Node<Integer> next = new
+	 * Node<Integer>(value, null, null); prev.setNext(next); prev = next; }
+	 * return root; }
+	 * 
+	 * public static Node<Integer> createLinkedListFromArray(int[] vals) {
+	 * Node<Integer> head = new Node<Integer>(vals[0], null, null);
+	 * Node<Integer> current = head; for (int i = 1; i < vals.length; i++) {
+	 * current = new Node<Integer>(vals[i], null, current); } return head; }
+	 */
 	public static String arrayToString(int[] array) {
-		if (array == null) return "";
+		if (array == null)
+			return "";
 		return arrayToString(array, 0, array.length - 1);
 	}
-	
+
 	public static String arrayToString(int[] array, int start, int end) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = start; i <= end; i++) {
@@ -93,7 +88,7 @@ public class AssortedMethods {
 			sb.append(v + ", ");
 		}
 		return sb.toString();
-	}	
+	}
 
 	public static String stringArrayToString(String[] array) {
 		StringBuilder sb = new StringBuilder();
@@ -184,47 +179,23 @@ public class AssortedMethods {
 		return buffer.toString();
 	}
 
-/*	public static TreeNode randomBST(int N, int min, int max) {
-		int d = randomIntInRange(min, max);
-		TreeNode root = new TreeNode(d);
-		for (int i = 1; i < N; i++) {
-			root.insertInOrder(randomIntInRange(min, max));
-		}
-		return root;
-	}
-
-	 Creates tree by mapping the array left to right, top to bottom. 
-	public static TreeNode createTreeFromArray(int[] array) {
-		if (array.length > 0) {
-			TreeNode root = new TreeNode(array[0]);
-			java.util.Queue<TreeNode> queue = new java.util.LinkedList<TreeNode>();
-			queue.add(root);
-			boolean done = false;
-			int i = 1;
-			while (!done) {
-				TreeNode r = (TreeNode) queue.element();
-				if (r.left == null) {
-					r.left = new TreeNode(array[i]);
-					i++;
-					queue.add(r.left);
-				} else if (r.right == null) {
-					r.right = new TreeNode(array[i]);
-					i++;
-					queue.add(r.right);
-				} else {
-					queue.remove();
-				}
-				if (i == array.length) {
-					done = true;
-				}
-			}
-			return root;
-		} else {
-			return null;
-		}
-	}
-
-*/	public static String getLongTextBlob() {
+	/*
+	 * public static TreeNode randomBST(int N, int min, int max) { int d =
+	 * randomIntInRange(min, max); TreeNode root = new TreeNode(d); for (int i =
+	 * 1; i < N; i++) { root.insertInOrder(randomIntInRange(min, max)); } return
+	 * root; }
+	 * 
+	 * Creates tree by mapping the array left to right, top to bottom. public
+	 * static TreeNode createTreeFromArray(int[] array) { if (array.length > 0)
+	 * { TreeNode root = new TreeNode(array[0]); java.util.Queue<TreeNode> queue
+	 * = new java.util.LinkedList<TreeNode>(); queue.add(root); boolean done =
+	 * false; int i = 1; while (!done) { TreeNode r = (TreeNode)
+	 * queue.element(); if (r.left == null) { r.left = new TreeNode(array[i]);
+	 * i++; queue.add(r.left); } else if (r.right == null) { r.right = new
+	 * TreeNode(array[i]); i++; queue.add(r.right); } else { queue.remove(); }
+	 * if (i == array.length) { done = true; } } return root; } else { return
+	 * null; } }
+	 */public static String getLongTextBlob() {
 		String book = "As they rounded a bend in the path that ran beside the river, Lara recognized the silhouette of a fig tree atop a nearby hill. The weather was hot and the days were long. The fig tree was in full leaf, but not yet bearing fruit. "
 				+ "Soon Lara spotted other landmarks an outcropping of limestone beside the path that had a silhouette like a mans face, a marshy spot beside the river where the waterfowl were easily startled, a tall tree that looked like a man with his arms upraised. They were drawing near to the place where there was an island in the river. The island was a good spot to make camp. They would sleep on the island tonight."
 				+ "Lara had been back and forth along the river path many times in her short life. Her people had not created the pathit had always been there, like the riverbut their deerskin-shod feet and the wooden wheels of their handcarts kept the path well worn. Laras people were salt traders, and their livelihood took them on a continual journey. ";
@@ -237,10 +208,11 @@ public class AssortedMethods {
 		return getLongTextBlob().split(" ");
 	}
 
-	/*public static Trie getTrieDictionary() {
-		return new Trie(getListOfWords());
-	}*/
-	
+	/*
+	 * public static Trie getTrieDictionary() { return new
+	 * Trie(getListOfWords()); }
+	 */
+
 	public static HashSet<String> getWordListAsHashSet() {
 		String[] wordList = getListOfWords();
 		HashSet<String> wordSet = new HashSet<String>();
@@ -248,7 +220,7 @@ public class AssortedMethods {
 			wordSet.add(s);
 		}
 		return wordSet;
-	}	
+	}
 
 	public static String[] getListOfWords() {
 		// Words in the dictionary.
@@ -292,17 +264,17 @@ public class AssortedMethods {
 				"real", "John", "line", "second", "church", "seem", "certain",
 				"big", "Four", "felt", "several", "children", "service",
 				"feel", "important", "rather", "name", "per", "among", "often",
-				"turn", "development", "developmentcomputer", "keep", "family", "seemed", "white",
-				"company", "mind", "members", "others", "within", "done",
-				"along", "turned", "god", "sense", "week", "best", "change",
-				"kind", "began", "child", "ever", "law", "matter", "least",
-				"means", "question", "act", "close", "mean", "leave", "itself",
-				"force", "study", "York", "action", "it's", "door",
-				"experience", "human", "result", "times", "run", "different",
-				"car", "example", "hands", "whole", "center", "although",
-				"call", "Five", "inform", "gave", "plan", "woman", "boy",
-				"feet", "provide", "taken", "thus", "body", "play", "seen",
-				"today", "having", "cost", "perhaps", "field", "local",
+				"turn", "development", "developmentcomputer", "keep", "family",
+				"seemed", "white", "company", "mind", "members", "others",
+				"within", "done", "along", "turned", "god", "sense", "week",
+				"best", "change", "kind", "began", "child", "ever", "law",
+				"matter", "least", "means", "question", "act", "close", "mean",
+				"leave", "itself", "force", "study", "York", "action", "it's",
+				"door", "experience", "human", "result", "times", "run",
+				"different", "car", "example", "hands", "whole", "center",
+				"although", "call", "Five", "inform", "gave", "plan", "woman",
+				"boy", "feet", "provide", "taken", "thus", "body", "play",
+				"seen", "today", "having", "cost", "perhaps", "field", "local",
 				"really", "am", "increase", "reason", "themselves", "clear",
 				"I'm", "information", "figure", "late", "above", "history",
 				"love", "girl", "held", "special", "move", "person", "whether",
@@ -590,7 +562,8 @@ public class AssortedMethods {
 				"represent", "skill", "spell", "broken", "arch", "angle",
 				"sick", "swell", "blind", "Contemporary", "engineer",
 				"military", "boundary", "location", "homes", "boil",
-				"officials", "operator", "Senate", "lend", "hearts", "embers", "abused", "resins", "trendy", "ssdsy" };
+				"officials", "operator", "Senate", "lend", "hearts", "embers",
+				"abused", "resins", "trendy", "ssdsy" };
 		return wordList;
 	}
 }

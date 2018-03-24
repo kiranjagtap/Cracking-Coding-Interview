@@ -1,4 +1,4 @@
-package Chapter1ArraysAndStrings;
+package Strings;
 
 public class StringCompression {
 	public static void main(String[] args) {
