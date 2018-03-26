@@ -1,4 +1,5 @@
-package datastructure;
+package LinkedList;
+
 
 /**
  * Given a circular linked list, implement an algorithm that returns the node at

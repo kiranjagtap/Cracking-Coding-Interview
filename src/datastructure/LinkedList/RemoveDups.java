@@ -1,8 +1,7 @@
-package datastructure;
+package LinkedList;
 
 import java.util.HashSet;
 
-import datastructure.Node;
 import Utils.AssortedMethods;
 
 /**

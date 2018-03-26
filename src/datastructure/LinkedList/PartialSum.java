@@ -1,4 +1,5 @@
-package datastructure;
+package LinkedList;
+
 
 /*
  * @author Kiran Jagtap

@@ -1,4 +1,4 @@
-package datastructure;
+package LinkedList;
 
 import java.util.Stack;
 

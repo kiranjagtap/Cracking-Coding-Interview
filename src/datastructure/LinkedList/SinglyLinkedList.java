@@ -1,4 +1,5 @@
-package datastructure;
+package LinkedList;
+
 
 /*
  * Implementation of Singly linked list in Java 
