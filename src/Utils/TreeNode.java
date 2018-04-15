@@ -7,6 +7,7 @@ public class TreeNode {
 	public TreeNode parent;
 	public int size = 0;
 
+	public TreeNode(){}
 	public TreeNode(int data) {
 		this.data = data;
 		size = 1;
@@ -74,6 +75,63 @@ public class TreeNode {
 			return right != null ? right.find(d) : null;
 		}
 		return null;
+	}
+
+	/*
+	 * Creates tree from parent[0..n-1] and returns root of the created tree
+	 */
+	public TreeNode createTree(int arr[], int n) {
+		// Create an array created[] to keep track
+		// of created nodes, initialize all entries
+		// as NULL
+		TreeNode[] created = new TreeNode[n];
+		for (int i = 0; i < n; i++)
+			created[i] = null;
+
+		for (int i = 0; i < n; i++)
+			createNode(arr, i, created);
+
+		return parent;
+	}
+
+	private void createNode(int[] arr, int i, TreeNode[] created) {
+
+		// If this node is already created
+		if (created[i] != null)
+			return;
+
+		// Create a new node and set created[i]
+		created[i] = new TreeNode(i);
+
+		// If 'i' is root, change root pointer and return
+		if (arr[i] == -1) {
+			parent = created[i];
+			return;
+		}
+
+		// If parent is not created, then create parent first
+		if (created[arr[i]] == null)
+			createNode(arr, arr[i], created);
+
+		// Find parent pointer
+		TreeNode p = created[arr[i]];
+
+		// If this is first child of parent
+		if (p.left == null)
+			p.left = created[i];
+		else
+			// If second child
+
+			p.right = created[i];
+
+	}
+
+	void inorder(TreeNode node) {
+		if (node != null) {
+			inorder(node.left);
+			System.out.print(node.data + " ");
+			inorder(node.right);
+		}
 	}
 
 	public void print() {
